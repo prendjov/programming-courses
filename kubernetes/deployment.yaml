@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: programming-courses
+  namespace: courses
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: programming-courses
+  template:
+    metadata:
+      labels:
+        app: programming-courses
+    spec:
+      containers:
+        - name: programming-courses
+          image: prendjov/programming-courses:latest
+          ports:
+            - containerPort: 8000
+          envFrom:
+            - configMapRef:
+                name: app-config
+            - secretRef:
+                name: app-secret

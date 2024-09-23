@@ -7,6 +7,7 @@ from pydantic import BaseModel
 class CoursesDTO(BaseModel):
     """DTO representing courses."""
 
+    id: int
     title: str
     description: str
     price: float
@@ -16,6 +17,7 @@ class CoursesDTO(BaseModel):
 class BoughtCoursesDTO(BaseModel):
     """DTO representing courses."""
 
+    id: int
     title: str
     description: str
     price: float

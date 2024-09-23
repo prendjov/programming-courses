@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app-config
+  namespace: courses
+data:
+  SQLALCHEMY_DATABASE_URL: 'postgresql://postgres:Asd:111444@db:5432/courses_db'

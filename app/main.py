@@ -35,7 +35,7 @@ def get_db():
 @app.post("/course/", response_model=CoursesDTO)
 def create_course(courseData: BoughtCoursesDTO, db: Session = Depends(get_db)):
     """Create a course."""
-    return crud.create_course(db=db, data=courseData)
+    return crud.create_course(db=db, course_data=courseData)
 
 
 @app.get("/course/{course_id}", response_model=CoursesDTO)
